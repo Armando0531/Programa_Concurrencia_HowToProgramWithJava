@@ -13,12 +13,12 @@ public class Consumer implements Runnable{
 	public void run() {
 		int sum = 0;
 		
-		for (int count = 0; count < 10; count++) {
+		for (int count = 1; count <= 10; count++) {
 			
 			try {
 				Thread.sleep(3000);
 				sum+=sharedLocation.blockingGet();
-				System.out.printf("\t\t\t%2d%n", sum);
+				//System.out.printf("\t\t\t%2d%n", sum);
 			} catch (InterruptedException e) {
 				Thread.currentThread().interrupt();
 			}
